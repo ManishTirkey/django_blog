@@ -6,10 +6,6 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 
 
-
-def ex(request):
-    return res("main")
-
 def contact(request):
     done = False
     if request.method == "POST":
@@ -19,7 +15,8 @@ def contact(request):
         comment = request.POST.get('comment', 'unknown')
 
         if len(phone_number) >= 10:
-            contact = Contact(full_name=fullname, email=email, ph_no=phone_number, comments=comment)
+            contact = Contact(full_name=fullname, email=email,
+                              ph_no=phone_number, comments=comment)
             contact.save()
             done = True
         else:
@@ -29,12 +26,6 @@ def contact(request):
             messages.success(request, f"thank you {fullname} to contact us.")
 
     return ren(request, "acc/contact.html")
-
-
-
-
-
-
 
 
 def SignIn(request):
@@ -47,13 +38,36 @@ def SignIn(request):
             return redirect('/blg/')
         else:
             messages.info(request, "invalid user")
+            return redirect('/blg')
     return res("404 not found")
 
     # return ren(request, "acc/sign-in.html")
+
 
 def SignOut(request):
     auth.logout(request)
     return redirect("/blg/")
 
+
 def Register(request):
-    return ren(request, "acc/register.html")
+    if request.method == "POST":
+        username = request.POST["username"]
+        fname = request.POST["firstname"]
+        lname = request.POST["lastname"]
+        email = request.POST["email"]
+        password_1 = request.POST["password"]
+        password_2 = request.POST["confirmpassword"]
+
+        if password_1 == password_2:
+            user = User.objects.create_user(
+                username=username, email=email, password=password_1)
+            user.first_name = fname
+            user.last_name = lname
+            user.save()
+            messages.success(request, f"Thank you {fname}.. ")
+            return redirect("/blg/")
+        else:
+            messages.warning(request, "Password don't march! Try again")
+            return redirect("/blg/")
+    else:
+        return res("404, not found")

@@ -20,7 +20,6 @@ from .import views
 app_name = 'account'
 
 urlpatterns = [
-    # path('', views.Contact, name="Contact"),
     path('contact/', views.contact, name="Contact"),
     path('sign-in/', views.SignIn, name="SignIn"),
     path('sign-out/', views.SignOut, name="SignOut"),
