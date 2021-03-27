@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!-- custome link -->
+{% block link %}
+<link rel="stylesheet" href="{% static '/acc/css/contact.css' %}">
+{% endblock link %}
+
+
+<!-- custome style -->
+{% block style %}
+<!-- <style>
+
+</style> -->
+{% endblock style %}
+
+<!-- custome title -->
+{% block title %}
+Contact
+{% endblock title %}
+
+
+
+
+<!-- custome body -->
+{% block body %}
+
+<div class="all">
+    <nav class="navbar">
+        <div class="container-1">
+            <div class="nav-wrapper">
+                <div class="title-container">
+                    <h1 class="fs-1 title"> <span class="c">c</span>ontact-us</h1>
+                </div>
+
+                <ul>
+                    <li class="item item-1"><a href="/blg/">Home</a></li>
+                    <li class="item item-2"><a href="#">About</a></li>
+                    <li class="item item-3"><a href="/account/contact/">Contact-us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% for message in messages%}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show display-6" role="alert">
+        <strong>Message: </strong>
+        <span>{{message}} .</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%endfor%}
+
+
+    <section class="contact-main">
+        <div class="containers">
+            <div class="main-wrapper">
+                <div class="forms">
+                    <form action="/account/contact/" method="POST">
+                        {% csrf_token %}
+
+                        <div class="about-address">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae molestiae quidem, deserunt
+                                culpa inventore nobis? Ipsum consectetur, illum placeat aliquid doloribus sunt eum iure
+                                recusandae fuga, sed obcaecati maxime ullam.</p>
+
+                        </div>
+
+                        <div class="contact-form">
+                            <div class="form-group">
+                                <label for="username">fullname</label>
+                                <input type="text" id="username" name="fullname" placeholder="name" required>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">phone</label>
+                                <input type="phone" id="phone" name="phone" placeholder="number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">email</label>
+                                <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="textarea">comments</label>
+                                <textarea placeholder="enter you comments here..." name="comment" id="textarea"
+                                    cols="30" rows="5"></textarea>
+                            </div>
+
+                            <button type="submit" class='form-btn'>Submit</button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="data">
+                    <div class="img">
+                        <img src="{%static 'acc/img/contact/img-1.jpg'%}" alt="place">
+                    </div>
+
+                    <div class="address">
+                        <div class="location-container">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Soso More Gumla, Jharkhand.</p>
+                        </div>
+
+                        <div class="email-container">
+                            <i class="fas fa-envelope"></i>
+                            <p>asdmamanish@gmail.com</p>
+                        </div>
+
+                        <div class="ph-container">
+                            <i class="fas fa-phone-square-alt"></i>
+                            <p>+917070360118</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+        <a href="#" class="o"><i class="fab fa-facebook fa-4x"></i></a>
+        <a href="#" class="t"><i class="fab fa-twitter-square fa-4x"></i></a>
+        <a href="#" class="th"><i class="fab fa-instagram fa-4x"></i></a>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, obcaecati?</p>
+        </div>
+    </footer>
+
+</div>
+
+
+
+{% endblock body %}
+
+
+<!-- custome script -->
+{% block script %}
+<script src="{% static 'acc/js/contact.js' %}"></script>
+<!-- <script>
+    alert("hello this is contact");
+</script> -->
+{% endblock script %}
+1

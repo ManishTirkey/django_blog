@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- custome link -->
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/baseblg.css' %}">
+
+{% block link-2 %}
+{% endblock link-2 %}
+
+{% endblock link %}
+
+
+<!-- custome body -->
+{% block body %}
+
+<div class="blg-main">
+    <div class="blg body-1">
+        <div class="blg-wrapper">
+            <header>
+                <div class="blg-nav-wrapper">
+                    <div class="title">
+                        <h3 class="blg-title">blog</h3>
+                        <div class="trigger-open-close">
+                            <input type="checkbox" class="checkbox" onclick="input()">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blg-navbar">
+                        <nav>
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/account/contact/">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                {% if user.is_active%}
+                <div class="user-name-container">
+                    <span class="user-name">Hi {{user.first_name}}</span>
+                </div>
+
+                {% endif %}
+
+                <div class="contact-btn">
+
+                    {% if user.is_authenticated %}
+                    {% if user.is_staff and user.is_superuser%}
+                    <button class="btn-1 btns btns-dark"> <a href="/admin/" class="out"> Admin
+                        </a></button>
+                    {% endif %}
+
+                    <button class="btn-1 btns btns-dark"> <a href="/account/sign-out/" class="out"> Sign-Out
+                        </a></button>
+
+                    {% else %}
+                    <button class="btn-1 btns btns-primary" onclick="sign_In()">Sign-In</button>
+                    {% endif %}
+
+
+                    <button class="btns btns-danger" onclick="register()">Register</button>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <div class="body_2">
+        {% block content_body %}
+
+        {% endblock content_body %}
+    </div>
+
+
+    <footer class="body_3">
+        <div class=" blg-footer">
+            <div class="footer-wrapper">
+                <div class="footer-data">
+                    <div class="footer_text">
+                        <div class="footer_text_container">
+                            <div class="footer_text_wrapper">
+                                <div class="footer_foot">
+                                    <div class="content-1 content">
+                                        <h4>Patnership</h4>
+                                        <span>websites</span>
+                                        <span>social media</span>
+                                        <span>branding</span>
+                                    </div>
+
+                                    <div class="content-1 content">
+                                        <h4>About</h4>
+                                        <span>OurProjects</span>
+                                        <span>careers</span>
+                                    </div>
+
+                                    <div class="content-1 content">
+                                        <h4>Supports</h4>
+                                        <span>support resquest</span>
+                                        <span>contact</span>
+
+                                    </div>
+                                </div>
+
+
+                                <hr>
+
+                                <div class="footer_footer">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, mollitia!
+                                    </p>
+                                    <div class="social_media">
+                                        <a href="https://www.instagram.com/manishtirkey1/">
+                                            <i class="fab fa-instagram fa-2x"></i>
+
+                                        </a>
+
+                                        <a href="https://github.com/ManishTirkey/">
+                                            <i class="fab fa-github fa-2x"></i>
+                                        </a>
+
+                                        <a href="https://twitter.com/ManishT86332321">
+                                            <i class="fab fa-twitter fa-2x"></i>
+                                        </a>
+                                        <a href="https://www.linkedin.com/in/manish-tirkey-b02a67205/">
+                                            <i class="fab fa-linkedin-in fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</div>
+
+
+{% endblock body %}
+
+
+
+
+<!-- custome script -->
+{% block script %}
+<script src="{% static 'js/baseblg.js' %}"></script>
+<!-- <script>
+    alert("manish");
+</script> -->
+
+
+
+{% block script-2 %}
+{% endblock script-2 %}
+
+{% endblock script %}

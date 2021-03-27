@@ -1,0 +1,57 @@
+{% extends 'baseblg.html' %}
+{% load static %}
+{% load humanize %}
+<!-- custome link -->
+{% block link-2 %}
+<link rel="stylesheet" href="{% static 'home/css/blg.css' %}">
+{% endblock link-2 %}
+
+
+
+<!-- custome title -->
+{% block title %}
+Posts
+{% endblock title %}
+
+
+
+
+
+<!-- custome body -->
+{% block content_body %}
+
+
+<main>
+    <div class="main-wrapper">
+        <div class="container_90">
+            {% for posts in allposts reversed%}
+            <div class="post-items">
+                <div class="post_image">
+                    <img src="/media/{{posts.post_thumbnail}}" alt="not found!" width="228.282px">
+                    <div class="overlay-data">
+                        <i class="far fa-heart fa-2x"></i>
+                        <i class="fas fa-comments fa-2x"></i>
+                    </div>
+                </div>
+                <div class="post-data">
+                    <h3> <a href="/blgposts/{{posts.post_id}}/"> {{posts.title}} </a></h3>
+                    <h5>
+                        <span class="badge bg-secondary">{{posts.time | naturaltime}}</span>
+                    </h5>
+                    <div id="{{posts.post_id}}" class="cards">
+                        {{posts.contents|truncatewords_html:70|safe}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+{% endblock content_body %}
+<!-- custome script -->
+{% block script-2 %}
+<!--<script src="{% static 'home/js/blg.js' %}"></script>-->
+<!-- <script>
+</script> -->
+{% endblock script-2 %}

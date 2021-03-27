@@ -1,0 +1,168 @@
+.proj {
+  border: 2px solid #212529;
+  box-shadow: inset 0 0 5rem 0 rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: #212529 !important;
+}
+
+.head-items .item,
+.head-items .item a,
+.main-container,
+.main-container a,
+.footer-container,
+.footer-container a,
+.footer-container button {
+  color: #fff;
+}
+
+.footer-container p,
+.main-container a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ##################################nav */
+
+.head-items {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.item-2 ul {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-container .li {
+  padding: 0.5rem 0.5rem;
+  cursor: pointer;
+}
+
+.nav-container .li a {
+  text-decoration: none;
+}
+
+.nav-container .li-2 {
+  margin: 0 1rem;
+}
+
+.nav-container .li-2,
+.li-3 {
+  opacity: 0.4;
+}
+
+.nav-container .li:hover {
+  opacity: 1;
+}
+
+/* ###############################main */
+
+.main-container {
+  text-align: center;
+}
+.main-container h1 {
+  width: 100%;
+}
+
+.main-container .text {
+  width: 100%;
+  text-align-last: auto;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 3rem auto;
+}
+
+.main-container .learn-more {
+  width: 100%;
+  text-align: left;
+}
+.main-container .btns a {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+}
+
+/* ################################footer */
+.footer-section {
+  align-items: center;
+  margin: 4rem 0 1rem 0;
+}
+.footer-container {
+  text-align: center;
+  font-size: 1.8rem;
+}
+.footer-container button {
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: none;
+}
+
+/* responsive */
+
+@media (max-width: 850px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 45%;
+  }
+}
+@media (max-width: 750px) {
+  .head-items {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .item-1 {
+    width: 100%;
+    text-align: center;
+  }
+  .item-2 {
+    margin-top: 1rem;
+  }
+  .item-2 ul {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (max-height: 400px) {
+  .proj {
+    height: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .nav-container ul .li {
+    margin: 0;
+    display: block;
+    width: 100%;
+  }
+  .main-container button {
+    font-size: 1.8rem;
+  }
+}

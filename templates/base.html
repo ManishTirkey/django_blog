@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    {% load humanize %}
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/all.css' %}">
+
+
+        <!-- custome Font awesome  -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- bootstrap css -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+
+        <!-- custome link -->
+        {% block link %}
+        {% endblock link %}
+
+
+
+
+        <title> Project Web |
+            {% block title %}
+            {% endblock title %}
+        </title>
+
+
+        <!-- custome style -->
+
+        {% block style %}
+        {% endblock style %}
+
+
+    </head>
+
+    <body>
+
+        <div class="body">
+            {% block body %}
+            {% endblock body %}
+
+
+
+            <!-- signup -->
+            <div class="sign-in-bg" id="sign-in-bg-id">
+                <div class="sign-in">
+                    <div class="sign-in-wrapper">
+                        <div class="sign-in-head">
+                            <h5> sign-In </h5>
+                            <button type="button" onclick="si_hide()">x</button>
+                        </div>
+                        <div class="sign-in-form">
+                            <form action="/account/sign-in/" method="POST">
+                                {% csrf_token %}
+                                <div class="sign-in-form-group">
+                                    <label for="sign-in-username"> username </label>
+                                    <input type="text" id="sign-in-username" name="username" placeholder="username"
+                                        required>
+                                </div>
+                                <div class="sign-in-form-group">
+                                    <label for="sign-in-password">password </label>
+                                    <input type="password" id="sign-in-password" name="password" placeholder="password"
+                                        required>
+                                </div>
+                                <div class="sign-in-btn">
+                                    <button type="submit">Sign-in</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- register -->
+            <div class="register-bg" id="register-bg-id">
+                <div class="register">
+                    <div class="register-wrapper">
+                        <div class="register-head">
+                            <h5> register </h5>
+                            <button type="button" onclick="re_hide()">x</button>
+                        </div>
+                        <div class="register-form">
+                            <form action="/account/register/" method="POST">
+                                {% csrf_token %}
+                                <div class="register-notice">
+                                    <span>
+                                        <p>Note :</p>
+                                    </span>
+                                    <ul>
+                                        <li>choose a strong password</li>
+                                    </ul>
+                                </div>
+                                <div class="register-form-group">
+                                    <label for="register-username"> username </label>
+                                    <input type="text" id="register-username" name="username" placeholder="username"
+                                        required>
+                                </div>
+                                <div class="register-form-group">
+                                    <label for="register-firstname"> First name </label>
+                                    <input type="text" id="register-firstname" name="firstname" placeholder="firstname"
+                                        required>
+                                </div>
+                                <div class="register-form-group">
+                                    <label for="register-lastname">Llast name </label>
+                                    <input type="text" id="register-name" name="name" placeholder="name" required>
+                                </div>
+                                <div class="register-form-group">
+                                    <label for="register-email"> Email </label>
+                                    <input type="text" id="register-email" name="email" placeholder="email" required>
+                                </div>
+                                <div class="register-form-group">
+                                    <label for="register-password">Password </label>
+                                    <input type="password" id="register-password" name="password" placeholder="password"
+                                        required>
+                                </div>
+                                <div class="register-form-group">
+                                    <label for="register-confirmpassword"> Confirm password </label>
+                                    <input type="confirmpassword" id="register-confirmpassword" name="confirmpassword"
+                                        placeholder="confirmpassword" required>
+                                </div>
+                                <div class="register-btn">
+                                    <button type="submit">register now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+            -->
+
+        <!-- custome javascript -->
+
+        {% block script %}
+        {% endblock script %}
+        <script src="{% static 'js/base.js' %}"></script>
+
+    </body>
+
+</html>

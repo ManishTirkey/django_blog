@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!-- custome link -->
+{% block link %}
+<link rel="stylesheet" href="{% static 'home/css/coverPage.css'%}">
+{% endblock link %}
+
+
+<!-- custome title -->
+{% block title %}
+Home
+{% endblock title %}
+
+
+<!-- custome body -->
+
+{% block body %}
+
+
+<div class="proj">
+    <section class="nav-section">
+        <header class="head">
+            <div class="head-items containers">
+
+                <h3 class="fs-1 item item-1">Cover</h3>
+
+                <nav class="item item-2">
+                    <div class="nav-container">
+                        <ul>
+                            <li class="fs-3 li-1 li">Home</li>
+                            <li class="fs-3 li-3 li"><a href="/account/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>>
+        </header>
+    </section>
+
+
+
+    <section class="main-section">
+        <main class="container-1">
+            <div class="main-container">
+
+                <h1 class="fs-1">Cover your page.</h1>
+
+                <div class="text">
+                    <p class="fs-3">Cover is a one-page template for building simple and beautiful home pages. Download,
+                        edit
+                        the
+                        text, and add
+                        your own
+                        fullscreen background photo to make it your own.</p>
+                </div>
+
+                <div class="learn-more">
+                    <button class="btns btns-success fs-2"><a href="/blg/">gets starterd...</a></button>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <section class="footer-section">
+        <footer class="container-1">
+            <div class="footer-container">
+                <p>if already account <button type="button" onclick="sign_In()">
+                        <a>
+                            Sign-In</a>
+                    </button>, create
+                    account: <button type="button" onclick="register()"><a>
+                            Register now</a></button></p>
+            </div>
+        </footer>
+    </section>
+</div>
+
+{% endblock body %}
