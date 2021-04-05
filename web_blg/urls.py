@@ -24,5 +24,6 @@ urlpatterns = [
     path('account/', include("account.urls", namespace='account')),
     path('', include("main.urls", namespace='main')),
 ]
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+#
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

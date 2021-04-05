@@ -1,0 +1,17 @@
+.head_section {
+  background: rgba(117, 61, 128, 1);
+  margin-bottom: 20px;
+}
+.head_section h2 {
+  font-family: "Montserrat", sans-serif;
+  padding: 18px;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.body_section {
+  width: 96%;
+  margin: 18px auto;
+  font-size: 18px;
+}
