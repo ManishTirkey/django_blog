@@ -1,6 +1,6 @@
 Create a new folder named as you wish; inside the folder type the command given below
 
-git clone git@github.com:ManishTirkey/django-FlashCard.git or download the zip and extract it
+git clone git@github.com:ManishTirkey/django_blog.git or download the zip and extract it
 
 after pull or extracting the file type these command (it will be good if you create a virtualenvironment)
 
