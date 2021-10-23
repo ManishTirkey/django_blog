@@ -28,16 +28,16 @@ Posts
             <div class="post-items">
                 <div class="post_image">
                     <img src="/media/{{posts.post_thumbnail}}" alt="not found!" width="228.282px">
-                    <div class="overlay-data">
-                        <i class="far fa-heart fa-2x"></i>
-                        <i class="fas fa-comments fa-2x"></i>
-                    </div>
                 </div>
                 <div class="post-data">
-                    <h3> <a href="/blgposts/{{posts.post_id}}/"> {{posts.title}} </a></h3>
+                    <span class="Heading">
+                         <a href="/blgposts/{{posts.post_id}}/"> {{posts.title}} </a>
+                    </span>
+
                     <h5>
-                        <span class="badge bg-secondary">{{posts.time | naturaltime}}</span>
+                        <span class="badge bg-secondary time">{{posts.time | naturaltime}}</span>
                     </h5>
+
                     <div id="{{posts.post_id}}" class="cards">
                         {{posts.contents|truncatewords_html:70|safe}}
                     </div>
